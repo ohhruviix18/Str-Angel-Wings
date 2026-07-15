@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FYF",
+    "FDF",
+    "FFF"
+  ],
+  "key": {
+    "F": { "item": "minecraft:feather" },
+    "D": { "item": "minecraft:diamond" },
+    "Y": { "item": "minecraft:red_dye" }
+  },
+  "result": { "item": "angelwings:red_angel_wings" }
+}
