@@ -1,8 +1,8 @@
 package com.angelwings.mod.item;
 
 import com.angelwings.mod.AngelWingsMod;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -36,11 +36,12 @@ public class AngelWingsItem extends ElytraItem {
         return repair.is(Items.FEATHER);
     }
 
-    // Textura que se renderiza en la espalda del jugador al volar/equipar.
+    // Textura que se renderiza en la espalda del jugador al volar/equipar (hook real de
+    // Forge para armaduras/elytras personalizadas: IForgeItem#getArmorTexture).
     // Debe existir el archivo: assets/angelwings/textures/entity/elytra/<colorName>.png (64x32)
     @Override
-    public ResourceLocation getElytraTexture(ItemStack stack, Entity entity) {
-        return new ResourceLocation(AngelWingsMod.MODID, "textures/entity/elytra/" + colorName + ".png");
+    public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlot slot, String type) {
+        return AngelWingsMod.MODID + ":textures/entity/elytra/" + colorName + ".png";
     }
 
     public String getColorName() {
